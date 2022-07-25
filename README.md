@@ -1,3 +1,5 @@
+# Structure of Profile of Account and Network
+
 ## 1. Demographic Profile of an Account (*resume-liked*)
 1, Background
 	- source (LT-BP)
@@ -10,14 +12,6 @@
 
 
 ## 2.  set of Address
-
-
-![[Pasted image 20220722165937.png]]
-![[Pasted image 20220722170128.png]]
-| ![[Pasted image 20220722165956.png]] |  ![[Pasted image 20220722170022.png]]   |
-| ------------------------------------ | --- |
-|                                      |     |
-![[Pasted image 20220722170051.png]]
 
 ### 2.1 Exchange *cryptoquant*
 - Reserve:
