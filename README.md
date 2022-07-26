@@ -24,6 +24,7 @@
     - [5.2.4. In-House Flow (Total/Mean)](#524-in-house-flow-totalmean)
 - [6. On-chain Flow Indicators CryptoQuant](#6-on-chain-flow-indicators-cryptoquant)
 - [7. Miner Index](#7-miner-index)
+- [8. Market Indicator](#8-market-indicator)
 # 1. Demographic Profile of an Account (*resume-liked*)
 1. Background
 	- source (LT-BP)
@@ -531,4 +532,102 @@ Balances of addresses belonging to mining pools
 		- While the **marginal impact is quite small**, higher selling pressure tends to come from existing miner reserves.
 - Guide:
   - https://resources.intotheblock.com/indicators/mining/miner-rewards-volume-share
+
+
+# 8. Market Indicator
+1. Estimated Levarage Ratio (ELR)
+	- Definition: The ratio of open interest divided by the reserve of an exchange.
+- Interpretation
+	- Estimated Leverage Ratio indicates how much leverage is used by users on average. 
+	- ELR for a derivative exchange tells us how much leverage is used by users on average. This information measures traders' **sentiment whether they take a high risk or low risk**.
+	- By value itself as the degree of leverage of the market
+		- High: Over Leveraged Market+ Possible Volatility
+		- Low: Low Leveraged Market
+	- By examining trend as the sentiment or tendency of total investors' urge to use leverage.
+		- Increasing trend: Holding More Leverage
+			- Increasing in values indicates more investors are taking high leverage risk in the derivatives trade. 
+			- Also, if **ELR value is high compared to the last couple of days, it indicates traders are quite confident in their positions.** 
+		- Decreasing trend: Taking off Leverage
+			- Decreasing in values indicates more investors are taking off leverage risk in the derivatives trade. 
+			- Also, if ELR value is low compared to the last couple of days, it indicates traders are changing their views or finishing their positions. 
+
+
+
+
+1. Short Term Holder SOPR
+	- Definition: evaluates the profit ratio of the whole market participants by comparing the value of outputs at the **spent time to created time.** 
+		- In a simple way, you can estimate the distribution of spent transaction output is **in profit or not**. SOPR is calculated as the USD value of spent outputs at the **spent time(realized value)** divided by the USD value of spent outputs at the **created time(value at creation)**.
+	- Steps:
+		1.  UTXO is transferred now
+		2.  CryptoQuant locates the USD Value of the spent period and divide them by the  USD Value at the created time Simply put, SOPR = **Now** value/ Past value
+		3. Categorize and put some figures separately by span time to conclude more specific meanings
+
+	
+	- Interpretation:
+		- By Value itself
+			- SOPR value greater than 1 ( SOPR > 1 ): It implies that the coins moved in a certain timescale are, on average, **selling at a profit**.
+			- SOPR value of exactly 1 ( SOPR =1 ): It implies that the coins moved in a certain timescale are, on average, selling coins **at break even**.
+			- SOPR value less than 1 ( SOPR < 1): It implies that the coins moved in a certain timescale are, on average, selling at a loss.
+	- By examining trend
+		- SOPR Trending **Higher** implies profits are being **realized** and coins that were in **profit are being transferred** to others. Also, it could be implied that investors who sell their coins in profit are increasing their sell or market condition for sellers are getting **more profitable**.
+		- SOPR Trending **Lower** implies losses are being realized and coins that were in loss are being transferred to others. Also, it could be implied that investors who sell their coins in loss are increasing their sell or market condition for sellers are getting less profitable
+  - Investing Applied Scenario:
+	  - Historically, in the middle of bull sentiment, the **market correction begins** right before the bull run begins and making SOPR drop below '1'. This could be the right time to buy before the bull run starts.
+	  - Historically, in the middle of bear sentiment, the market correction begins right before the bear market starts making SOPR rise above '1'. This could be the **right time to sell before the bear market starts**.
+
+- Why are some indicators modified?
+	- 1) Can **less than an hour** long aged UTXO mean significance?(aSOPR)
+		 - aSOPR stands for adjusted SOPR( Spent Output Profit Ratio) . 
+		 - It derived from the standard SOPR by excluding UTXOs that has input-output span that are aged less than an hour long.
+		 - If there are **too many** UTXO that are being generated recently, the indicator's value will be made equal to the number of 1 which would mean that **many UTXO are at even**.  
+	 - 2) What if long/short aged UTXO specifically suffer from loss? (LTH-SOPR, STH-SOPR)
+		 - LTH-SOPR stands for Long Term **Holder** - SOPR ( Spent Output Profit Ratio).  It derived from the standard SOPR by leaving only the UTXO that are **aged more than 155 days.**
+		 - STH-SOPR stands for Short Term **Holder** - SOPR ( Spent Output Profit Ratio). It derived from the standard SOPR by leaving only the UTXO that are aged l**ess than 155 days and more than an hour aliv**e. 
+
+1. Long Term Holder SOPR
+
+2. Adjusted SOPR (aSOPR)
+
+3. SOPR Ratio (LTH-SOPR/STH-SOPR)
+
+
+4. Spent Output profit Ratio
+
+
+5. MVRV Ratio (three halvings)
+	- Definition: MVRV (Market Value to Realized Value) ratio is defined as an asset's market capitalization divided by [realized capitalization](https://cryptoquant.com/docs/#operation/getCapitalization).
+	- Interpretation:
+		- By comparing two valuation methods, the MVRV ratio can tell us to get a sense of whether the price is fair or not, which means it is useful to **get market tops and bottoms**. 
+		- It is important to note that historically, it has been an **outstanding indicator to spot market top/bottom or local top/bottom** that occurred through **three halvings**.
+
+6. Stablecoin Supply Ratio (SSR)
+	- Definition: ratio of the Market Cap of BTC divided by the Market Cap of all Stablecoins.
+	- ![[Pasted image 20220722162029.png]]
+	- Interpretation
+		- In understanding SSR, understanding the function of stablecoin and its assumption should be done.
+		- First, *stablecoins play an important role in the cryptocurrency market as a fiat currency like USD in the regulated market. This is because fiat currencies like USD as a supplier of liquidity have a lot of regulation issues.* 
+		- Second, *SSR is easy to understand when there is an assumption that the market is a **closed system** containing only cryptocurrencies and stablecoins.*  
+		- The relationship between BTC and Stablecoins is like **seasaw** and provide valuable insight on **who has more weight at the moment**. 
+	- By value itself
+		- It shows comparative power status between BTC and Stablecoin by comparing market cap
+		- High : Low Potential Buying Pressure - Bearish
+			- High values mean **Low Stablecoin supply** compared to the market cap of BTC indicating potential **low buying pressure** and possible price drop. 
+		- Low  : High Potential Buying Pressure - Bullish 
+			- Low values mean high Stablecoin supply compared to the market cap of BTC indicating potential buying pressure and possible price rise. 
+	- By examining trend 
+		- It shows the level of Exchange **Activeness & Volatility**
+		- Increasing trend : Slowing down status of stablecoin's buying power - Bearish or **sideways sentiment**
+		- Decreasing trend : Rising status of stablecoin's buying power - Bullish
+ NoteAdditional **stablecoins could be minted anytime disrupting the assumption that crypto market is a closed system.** However, as crypto market continues to expand, additional mint would gradually lose its impact on the model.
+As time passes, the degree of values' meaning could differ on level. 
+
+
+
+
+9. Realized Price
+	- Definition: Realized Cap divided by the total coin supply. It measures the average price weighted by the supply of what the entire market participants paid for their coins. It can be interpreted as the **on-chain support or resistance price.**
+
+
+10. Realized Price - UTXO Age Bands
+	- Definition: a set of realized prices along with age bands. The metrics help us to overview **each cohort’s holding** behavior by overlaying a set of different realized prices. Realized price is calculated as Realized Cap divided by the total supply.
 
