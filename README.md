@@ -5,7 +5,7 @@
   - [3.1. Address Active Addresses](#31-address-active-addresses)
   - [3.2. Address Balances (Native)](#32-address-balances-native)
   - [3.3. Address Balances (USD)](#33-address-balances-usd)
-  - [3.4. 3.4  Address Growth](#34-34--address-growth)
+  - [3.4. Address Growth](#34-address-growth)
   - [3.5. Address Supply](#35-address-supply)
   - [3.6. Addresses in Profit/Loss](#36-addresses-in-profitloss)
   - [3.7. Exchange Activity](#37-exchange-activity)
@@ -23,6 +23,7 @@
     - [5.2.3. Withdrawing Transactions](#523-withdrawing-transactions)
     - [5.2.4. In-House Flow (Total/Mean)](#524-in-house-flow-totalmean)
 - [6. On-chain Flow Indicators CryptoQuant](#6-on-chain-flow-indicators-cryptoquant)
+- [7. Miner Index](#7-miner-index)
 # 1. Demographic Profile of an Account (*resume-liked*)
 1. Background
 	- source (LT-BP)
@@ -420,4 +421,114 @@ Group Chart: https://cryptoquant.com/asset/btc/chart/exchange-flows
 	- Definition: [Coin Days Destroyed (CDD)](https://cryptoquant.com/asset/btc/chart/network-indicator/coin-days-destroyed-cdd) of coins destroyed by flowing into exchanges.  
 High values indicate that more long-term holders moved their coins for the purpose of possible selling.  
 This indicator is a noise-removed version of CDD with respect to exchange dumping signal.
+
+
+
+# 7. Miner Index
+source: https://app.intotheblock.com/coin/BTC/deep-dive?group=mining&chart=all
+
+1. Miner Reserves
+Balances of addresses belonging to mining pools
+7-Day Change, 30-Day Change, 90-Day Change
+
+2. Miner Inflows (BTC/USD)
+- Definition: 
+  - Volume (in $ or crypto terms) flowing into mining pools' addresses
+- Type:
+		- 7-Day Change, 30-Day Change, 90-Day Change
+- Guide:
+  - https://resources.intotheblock.com/indicators/mining/miner-inflows
+
+3. Miner Outflows (BTC/USD)
+	- Definition: Volume (in $ or crypto terms) flowing out of mining pools' addresses
+	- Type:
+		- 7-Day Change, 30-Day Change, 90-Day Change
+	- Interpretation:
+		- Since miners have been accumulating crypto since the early days, Miner Outflows can show valuable patterns of how they manage it. In the graph above, there are two or three spikes in miner outflows.
+		- Miner outflows can suggest miners are transferring out part of their crypto holdings into exchanges to sell. In this case, one spike occurred right before the first announcement of the Chinese crackdown on mining on May 19, hinting at the possibility that some miners may have been aware of the regulations coming. 
+		- Then on June 7 and 15, miner outflows spiked again as the mining ban went into effect. This pattern points to miners selling part of their Bitcoin holdings in light of the crackdown. Given that sending miner equipment internationally can be expensive, it is likely that the spike in miner outflows was due to miners covering these costs by selling their positions.
+  - Guide:
+    - https://resources.intotheblock.com/indicators/mining/miner-outflows
+
+4. Miner Netflows
+	- Interpretation:
+		- ![](https://lh6.googleusercontent.com/cviE4k6-3F1NXftEgDGb34g-L033ISWog374i3y73bQxlzVC3DNWFUKNlquoutvxP0yGFwAo8sMVigdsQe6JCf1T5lJ1RVNXAV7tdaBEzZL1WmiE78a7BERomUA7SW5PcNSM2YWc)
+		- Miner Netflows is one of the most useful indicators to fully understand the behavior of miners. Since miner inflows and outflows tend to move in tandem, the difference between them is more valuable than either separately.
+		- ⭐️  Quick Tip: By analyzing miner netflows, users can **gauge** if overall **miners are accumulating or selling**; high positive values point to accumulation, while negative numbers indicate net selling.
+		- In the example above, we can clearly see **two sharp drops in miner netflows**. 
+		- This means that the amount leaving miners’ addresses was much higher than the amount entering them. In other words, miner rewards and acquisitions were meager relative to miner outflows. Ultimately, this suggests strong selling activity from miners in light of the Chinese mining crackdown.
+  - Guide:
+    - https://resources.intotheblock.com/indicators/mining/miner-netflows
+
+
+
+5. Miner Total Flows
+	- Interpretation:
+		- Miner Total Flows are helpful to understand the total amount of miner activity taking place. 
+		- In the graph above, we can see that total miner activity had been trending downwards, up until mid-May as uncertainty regarding Chinese mining migration arised.
+- Guide:
+  - https://resources.intotheblock.com/indicators/mining/miner-total-flows
+
+
+6. Miner Flows Volume Share
+	- Definition: The percentage that **miners' total flows make out of the total on-chain volume** on a given day
+	-  Description: divides Miners’ Total Flows by the total on-chain transaction volume. The result represents the share that **miner activity** makes out of all transaction volume.
+	- Interpretation:
+		- The Miner Flows Volume Share indicator is helpful to put miner activity relative to the total amount of on-chain volume. 
+		- As seen above, the significance of miner activity has been decreasing significantly, particularly after every halving as signalled by the arrows on top of the graph. 
+		- Overall, this is valuable information to consider. 
+		- Particularly in periods like during the May-June 2021 Chinese mining migration, it is worth pointing out that although miners do manage high Bitcoin reserves, they represent a small fraction of the total activity happening on the blockchain.
+- Guide: 
+  - https://resources.intotheblock.com/indicators/mining/miner-flows-volume-share
+
+7. Hash Rate
+	- Definition: speed at which a mining machine is operating to solve the mathematical puzzle that “solves” and essentially validates a block. 
+	- Description:
+		- The Hash Rate is a measure of the aggregate computing power provided by miners in a Proof of Work (PoW) blockchain. In the case of Bitcoin, the hash rate is the total power allocated to solving the cryptographic problem SHA-256
+		- measure of the aggregate computing power provided by miners in a proof of work blockchain. 
+		- In the case of Bitcoin, the hash rate is the total power allocated to solving the cryptographic problem SHA-256 through which consensus is reached between all nodes, publicly validating transactions in the blockchain.
+		- A blockchain ’s hash rate is often associated with its security. 
+		- This is the case as more computing power allocated to validate transactions make it more expensive to attempt to attack the blockchain. 
+		- Therefore, increases in hash rate can be interpreted as improvements in the underlying blockchain security. 
+	- Interpretation: (Bitcoin’s long-term hash rate)
+		- By securing the network, the hash rate is a prevalent indicator of the blockchain’s health. Large decreases in the hash rate are important to note as they make the underlying network more vulnerable to 51% attacks. This is the case as less computing power would be required to attack the network, thus making it less costly. On the other hand, increases in hash rate make it more costly to attack a blockchain. 
+		- Another important factor of the hash rate is how it relates to miner profitability. When mining rewards drop in Bitcoin’s well-known halvings, miner profitability also drops proportionally. As a result, the hash rate often drops right after halvings, though this has typically been temporary. 
+		- Willingness to keep mining despite smaller profit margins can be interpreted as a sign of optimism among miners. Hence, Bitcoin’s increasing hash rate despite the May 2020 halving could signal positive expectations from miners in regards to the crypto-asset’s price, which can potentially be interpreted as bullish sentiment from miners.
+	- Types:
+		- 30-Day Average, 30-Day High, 30-Day Low
+- Guide:
+  - https://resources.intotheblock.com/indicators/mining/hash-rate
+
+
+
+8. Hash Rate Distribution
+	- Definition: Concentration of hash rate by mining pool
+	- Description:
+		- measure of the aggregate computing power provided by miners in a Proof of Work (PoW) blockchain. The distribution of **hash rate points out** how the contribution of computing resources is split across mining pools. 
+	- Interpretation:
+		- The hash rate distribution metric is valuable to assess the dominance of particular mining pools and their concentration. In theory, having multiple mining pools where each pool has a small percentage of the hash rate suggests high decentralization, and therefore greater censorship-resistance for a blockchain. 
+		- Although miners globally can participate in virtually any mining pool, they do tend to follow local patterns. This became apparent with the Chinese crypto mining migration, which led to a decrease of 30% and 60% in the Binance and Huobi pools (which have large propositions of Chinese miners).
+- Guide:
+  - https://resources.intotheblock.com/indicators/mining/hash-rate-distribution
+
+
+9. Miner Rewards
+	- Definition: Rewards paid out to miners in the form of issuance (block subsidy) and transaction fees
+	- Interpretation:
+		- Miner rewards are useful to understand how much value is being created by miners, at least in terms of how much they are earning. This indicator also provides insights into the activity of a blockchain.
+		- An increase in transaction fee revenues indicates high blockchain activity from the part of users. When blockchain activity is low, the proportion of mining revenue coming from transaction fees declines.
+- Guide:
+  - https://resources.intotheblock.com/indicators/mining/miner-rewards
+
+10. Miner Rewards Volume Share
+	- Definition: The percentage that mining rewards represent out of the total on-chain volume on a given day.
+	- Description:
+		- Miner Rewards Volume Share **puts miner activity** in context to the total volume. In this case, the indicator measures **only mining revenues as a percentage of daily on-chain transaction volume**.
+	- Interpretation:
+		- gauge the marginal effect from additional crypto being mined. 
+		- Since inflation rate has decreased significantly amongst most proof of work blockchains, the percentage that daily mining rewards make out of the total volume has decreased to become almost negligible.
+		- It is worth keeping this indicator in mind to contextualize the selling pressure created from each additional day of mining.
+		- While the **marginal impact is quite small**, higher selling pressure tends to come from existing miner reserves.
+- Guide:
+  - https://resources.intotheblock.com/indicators/mining/miner-rewards-volume-share
 
