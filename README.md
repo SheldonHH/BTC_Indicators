@@ -10,19 +10,19 @@
     - [5. Addresses in Profit/Loss](#5-addresses-in-profitloss)
     - [6. Exchange Activity](#6-exchange-activity)
     - [7. Hodlers](#7-hodlers)
-  - [4. Token Summary](#4-token-summary)
+- [4. Token Summary](#4-token-summary)
     - [4.1 Overview:](#41-overview)
     - [4.2 Four Main Onchain Signals](#42-four-main-onchain-signals)
     - [4.3 Exchange Signals](#43-exchange-signals)
     - [4.4 Derivatives](#44-derivatives)
-    - [5. Exchange Flow Indicator](#5-exchange-flow-indicator)
+  - [5. Exchange Flow Indicator](#5-exchange-flow-indicator)
       - [5.1 IntoTheBlock](#51-intotheblock)
       - [5.2 CrytoQuant](#52-crytoquant)
         - [1. Reserve:](#1-reserve)
         - [2. Exchange In/Outflow & Netflow](#2-exchange-inoutflow--netflow)
         - [3. Withdrawing Transactions](#3-withdrawing-transactions)
         - [4. In-House Flow (Total/Mean)](#4-in-house-flow-totalmean)
-    - [6. On-chain Flow Indicators CryptoQuant](#6-on-chain-flow-indicators-cryptoquant)
+  - [6. On-chain Flow Indicators CryptoQuant](#6-on-chain-flow-indicators-cryptoquant)
 ## 1. Demographic Profile of an Account (*resume-liked*)
 1. Background
 	- source (LT-BP)
@@ -137,7 +137,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 
-## 4. Token Summary
+# 4. Token Summary
 ### 4.1 Overview:
 1. Holders Making Money at Current Price
 	 - Definition: 
@@ -243,7 +243,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 
-### 5. Exchange Flow Indicator 
+## 5. Exchange Flow Indicator 
 #### 5.1 IntoTheBlock
 On-chain flows display how crypto assets are moving **to and from exchanges**. Data could be subject to change as IntoTheBlock's models evolve over time.
 - View Group Chart: https://app.intotheblock.com/coin/BTC/deep-dive?group=exchanges&subgroup=on-chain-flows&chart=all
@@ -350,8 +350,7 @@ Group Chart: https://cryptoquant.com/asset/btc/chart/exchange-flows
 
 
 
-
-### 6. On-chain Flow Indicators CryptoQuant
+## 6. On-chain Flow Indicators CryptoQuant
 *Flow Indicator: on on-chain models to signal possible price movements by assessing the value of Bitcoin and allow investors and traders to operate with confidence.*
 - On-chain models to signal possible price movements by assessing the value of Bitcoin and allow investors and traders to operate with confidence.
 
