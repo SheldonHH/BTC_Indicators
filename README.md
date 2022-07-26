@@ -27,6 +27,9 @@
 - [8. Spot Market Indicator](#8-spot-market-indicator)
   - [8.1. SOPR](#81-sopr)
   - [8.2. Order Books](#82-order-books)
+  - [8.3. Use network data including market cap to evaluate whether Bitcoin is overvalued or not](#83-use-network-data-including-market-cap-to-evaluate-whether-bitcoin-is-overvalued-or-not)
+    - [8.3.1. Coin Days Destroyed](#831-coin-days-destroyed)
+    - [8.3.2. Miscellanous Index of Network Indicators](#832-miscellanous-index-of-network-indicators)
 # 1. Demographic Profile of an Account (*resume-liked*)
 1. Background
 	- source (LT-BP)
@@ -663,3 +666,207 @@ measure movements within exchanges to provide a near real-time view of trading a
 	- Types of **Buyer - Seller Trades Difference**
 		- 1 minute, 10 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours
 
+##  8.3. Use network data including market cap to evaluate whether Bitcoin is overvalued or not
+
+1. Net Unrealized Profit/Loss (NUPL)
+   - Definition:
+     - Net Unrealized Profit and Loss (NUPL) is the difference between market cap and realized cap divided by market cap.
+   - Description:
+     - Assuming that the latest coin movement is the result of a purchase, NUPL indicates the total amount of profit/loss in all the coins represented as a ratio.
+     - It could be interpreted as the ratio of investors who are in profit.
+     - Values over '0' indicate investors are in profit and an increasing trend in value means more investors are beginning to be in profit.
+     - This phase indicates the increasing reason to take profit which leads to an increase in sell pressure.
+   - More: https://dataguide.cryptoquant.com/utxo-data-indicators/net-unrealized-profit-and-loss-nupl
+   - API: https://cryptoquant.com/docs#operation/getNUPL
+2. Net Unrealized Profit (NUP)
+   - Definition: 
+     - Net Unrealized Profit (NUP) is the sum of products of UTXO's value and the price difference between created and destroyed only in profit, divided by market_cap.
+   - Description:
+     - Assuming that the latest coin movement is a result of a purchase, it shows the total number of UTXOs that are in profit.
+     - An increasing trend in value means more investors are beginning to be in profit resulting increase in sell pressure.
+   - More: https://dataguide.cryptoquant.com/utxo-data-indicators/net-unrealized-profit-and-loss-nupl
+   - API: https://cryptoquant.com/docs#operation/getNUPL
+
+3. Net Unrealized Loss
+   - Definition: Net Unrealized Loss (NUL) is the sum of products of UTXO's value and the price difference between created and destroyed only in loss, divided by market_cap.
+   - Description:
+     - Assuming that the latest coin movement is a result of a purchase, it shows the total number of UTXOs that are in loss.
+     - An increasing trend in value means more investors are beginning to be in loss indicating “possible bottom”.
+   - More: https://dataguide.cryptoquant.com/utxo-data-indicators/net-unrealized-profit-and-loss-nupl
+   - API: https://cryptoquant.com/docs#operation/getNUPL
+
+###  8.3.1. Coin Days Destroyed
+
+When UTXO is destroyed, Coin Days Destroyed (CDD) is calculated as the sum value of the number of days between created and spent multiplied by UTXO amount.  
+This indicator gives more weight to the longer-lived UTXO making the indicator sensitive to long-term holders' movement.  
+CDD provides the sentiment of long-term holders and behavior.  
+High values indicate long-term holders moved their coins for the purpose of possible selling.'
+
+
+-  Coin Days Destroyed (CDD)
+	- Definition: 
+    - Coin Days evaluates the number of coins that are not being spent, which gives more weight to estimate long-term-holder(LTH) position. 
+  - Description:
+    - When that coin is spent, the coin is considered "destroyed," and is being updated on Coin Days Destroyed(CDD) metric. CDD is the sum of products of spent transaction output alive days and its value.
+	- Interpretation: 
+		- By value itself
+			- **High**: Long-held coins are moving in great amounts -**Volatility Risk or Possible Trend Reversal**
+			- A large number of alive days are destroyed which indicates that long-term holders' coins are exposed to selling. Since coins held long have a huge impact on the market,  
+			- **Low**: Long-held coins are moving in less amount 
+		- By examining trend
+			- Increasing trend:  Increasing selling pressure: Long term holders' coins are continuously being sold
+			- Decreasing trend: Decreasing selling pressure: Long term holders' coins are slowing down in movement
+		- Note on CDD
+			- CDD gives more weight to 
+				1) **longer-lived** UTXO 
+				2) Amount of UTXO is holding BTC. 
+			Weighting more on these makes the indicator sensitive to long-term holders’ movement and show sentiment & behavior. 
+		- Explanation on creation and destruction of UTXO(s): For every coin that has not been spent on that day, it accumulates one "Coin Day." To understand the concept of "Coin Day" better, check the examples below.
+			- A UTXO for 1 BTC that has not been spent for 10-days has accumulated 10 coin days.
+			- A UTXO for 0.5 BTC that has not been spent for 100-days has accumulated 50 coin days.
+			- A UTXO for 8 BTC that has not been spent for 6-hours (1/4 day) has accumulated 2 coin days.
+		- When that coin is spent, the coin is considered "destroyed," and is being updated on CDD metric.
+			- CDD: An indicator reflects market participants who have been in the bitcoin on-chain for longer.
+			- Supply Adjusted CDD: Normalized CDD by supply total.
+			- Average Supply Adjusted CDD: Average value of Supply-Adjusted CDD since genesis block.
+			- Binary CDD: Signal whether the current Supply-Adjusted CDD is larger than its average or not.
+	- More: https://cryptoquant.com/asset/btc/chart/network-indicator/supply-adjusted-cdd?window=DAY&sma=0&ema=0&priceScale=log&metricScale=linear&chartStyle=line
+	- API: https://cryptoquant.com/docs#operation/getCDD
+
+1. Supply-Adjusted CDD
+	- Definition:  CDD value adjusted by supply. It is calculated as the value of CDD divided by total supply.  
+	- Description: 
+		- It is adjusted CDD for better tracking of long-term holders.  
+		- High values indicate long-term holders sold more proportional to indicator's values.
+	- More: https://cryptoquant.com/asset/btc/chart/network-indicator/supply-adjusted-cdd?window=DAY&sma=0&ema=0&priceScale=log&metricScale=linear&chartStyle=line
+	- API: https://cryptoquant.com/docs#operation/getCDD
+
+2. Average Supply-Adjusted CDD
+	- Definition:  The historical average value of Supply-Adjusted CDD after generation block.  
+	- Description:
+		- It indicates how much long-term holders' activeness of movement was higher or lower than average.
+   - More: https://cryptoquant.com/asset/btc/chart/network-indicator/average-supply-adjusted-cdd?window=DAY&sma=0&ema=0&priceScale=log&metricScale=linear&chartStyle=line
+   - API: https://cryptoquant.com/docs#operation/getCDD
+
+
+
+3. Binary CDD
+	- Definition: binary value and if Supply Adjusted Coin Days Destroyed (Supply-Adjusted CDD) is larger than average Supply-Adjusted CDD, Binary Coin Days points to '1' and points to '0' if not.  
+	- Description:
+		- It shows whether long-term holders' movements are higher or lower than average.  
+		- High density of value pointing '1' indicates long-term holders moved their coins for possible selling.
+
+4. Supply Adjusted Dormancy
+	- Definition: supply adjusted average number of **destroyed days of moved** coins.  
+	- Description:
+		- It is calculated by dividing **Average Dormacy by the total amount of supplies**.  
+		- Adjustment was made due to **increasing** supply of coins.  
+		- Its value increase when l**ong-term holders move or possibly sell** their coins indicating possible price drop.
+	- Details:  
+		- (average_dormancy) is the average number of days destroyed per coin transacted. 
+		- Supply-Adjusted Average Dormancy (sa_average_dormancy) is the average dormancy normalized by supply total, where supply total increases as more blocks mined.
+	- API: https://cryptoquant.com/docs#operation/getPNLSupply
+
+### 8.3.2. Miscellanous Index of Network Indicators
+1. Average Dormancy 
+	- Definition:  The average number of destroyed days of moved coins.  
+	- Description:
+		- It is calculated by dividing **CDD** by the total amount of movement of coins.  
+		- Its value increase when long-term holders move or possibly sell their coins indicating possible price drop.
+	- Input: 
+		- CDD; 
+		- total amount of movement of coins.  
+	- API: https://cryptoquant.com/docs#operation/getDormancy
+
+
+2. NVT Golden Cross
+	- Definition: Modified index of Network Value to Transaction(NVT) that provides local tops/bottoms.  
+	- Description:
+		- Values over '2.2' indicate overbuying (possible top) 
+		- under '-1.6' indicate overselling (possible bottom).
+	- API: https://cryptoquant.com/docs#operation/getNVTGoldenCross
+
+
+3. Puell Multiple
+	- Definition: 
+		- The ratio of the **daily value of the issued coin** in USD divided by 365 days moving average of the daily value of issued coins in USD.
+		- ![[Pasted image 20220722141529.png]]
+	- Description: 
+		- Predicting Price Tops and Bottoms
+			- Values over ‘4’ : Short Signal
+				- If Puell multiple rises, it indicates that price=Miner's revenue is increasing significantly compared to the cost they put in. In this phase, bitcoin soared to point where Miner's revenue far exceeds the cost they put in. If we put regard bitcoin's true value with miners' cost (POW) and hashrate, this could indicate that bitcoin is overpriced.
+				- In other words, this could indicate that price is overvalued along with the increasing miner's motive to sell.
+			- Values under ‘0.5’ : Long Signal
+				- If Puell multiple decreases, it indicates that price=Miner's revenue is decreasing significantly compared to the cost they put in. In this phase, bitcoin prices plunged to the point where miners can't handle the cost of electricity making some miners stop their mining action.
+				- In other words, this could indicate that price is undervalued along with the increasing miner's motive to hold their bitcoin reserve.
+		- By examining trend, it shows **miners' short-term revenues relative to long-term profits**.
+			- Increasing trend : Marketcap(Price) is heating up compared to miners' cost
+			- Decreasing trend : Marketcap(Price) is cooling down compared to miners' cost
+
+
+
+4.  NVT Ratio
+	- Definition: NVT Golden Cross (NVT_GC) is a [Bollinger-band](https://en.wikipedia.org/wiki/Bollinger_Bands)-like signaling indicator based on NVT, defined as the following equation.	- ![[Pasted image 20220722142139.png]]
+	- Description
+		- NVT Golden Cross targets to generate short or long signals by comparing the short-term trend of NVT and the long-term trend of NVT. 
+		- This **leading indicator** predicts the appearances of local tops and bottoms, which helps traders to take their short or long positions.
+		- Predicting Local Tops and Bottoms
+			- Values over ‘2.2’ : Short Signal: If the short-term trend is way greater than the long-term trend is, the network can be interpreted as overpriced and will soon revert to mean value, meaning short signal. 
+			- Values under ‘-1.6’ : Long Signal: If the long-term trend is way greater than the short-term trend is, the network can be interpreted as under-priced and will soon revert to mean value, meaning long signal. 
+		- comparative trend difference between long-term and short-term.
+			- Increasing trend : Marketcap(Price) is heating up compared to transaction volume
+			- Decreasing trend : Marketcap(Price) is cooling down compared to transaction volume
+> Bollinger Bands: *display a graphical band (the envelope maximum and minimum of moving averages, similar to Keltner or Donchian channels) and volatility (expressed by the width of the envelope) in one two-dimensional chart.  Two input parameters chosen independently by the user govern how a given chart summarizes the known historical price data, allowing the user to vary the response of the chart to the magnitude and frequency of price changes, similar to parametric equations in signal processing or control systems. Bollinger Bands consist of an N-period moving average (MA), an upper band at K times an N-period standard deviation above the moving average (MA + Kσ), and a lower band at K times an N-period standard deviation below the moving average (MA − Kσ). The chart thus expresses arbitrary choices or assumptions of the user, and is not strictly about the price data alone.*
+
+
+
+5.  Network Value to Metcalfe Ratio(NVM) 
+	- Definition: the ratio of the log of market capitalization divided by the log of the square of daily active addresses in the specified window.
+		- ![[Pasted image 20220722144815.png]]
+	- Description:
+		- evaluates the fair value of the blockchain network by applying [Metcalfe's Law](https://en.wikipedia.org/wiki/Metcalfe's_law) where the law claims that the value of the **network is proportional to the square of the number of active users.** 
+		-   **High values : Overvalued network** The network is **overvalued** by the interpretation where the price is too high compared to the low number of active addresses
+		-   **Low values** **: Undervalued network** The network is **undervalued** by the interpretation where the price is too low compared to the high number of active addresses
+	- Use Case: RSI based market spotting local tops and bottoms
+		- measuring the **relative strength of an upward trend and downward trend**. We **apply RSI to NVM** for spotting the market's local **tops** and bottoms by **thresholding**. As you can see in the figure below, RSI of NVM quite correctly spots local tops and bottoms in a robust way.
+		- ![[Pasted image 20220722145156.png|300]]
+
+
+6. Stock-to-Flow Ratio
+	- Definition: ratio of currently circulating coins divided by newly supplied coins.
+	- Interpretation:
+		- SF ratio assumes that the **scarcity** of the coin drives the price of the coin. The analysis on SF ratio is first presented by a pseudonymous [Dutch institutional investor](https://100trillionusd.github.io/) who operates under the Twitter account “[PlanB](https://twitter.com/100trillionUSD)”. By looking at SF ratio as a chart, we can spot where the market regime is.
+		- ![[Pasted image 20220722150016.png|200]]
+		- If Newly supplied coins decrease, SF Ratio rises.
+		- If circulating coins rises, SF Ratio rises.
+	- Use Case:  Statistical analysis on SF ratio
+		- The log of **SF ratio** is in a linear relationship with **the log of the price**. We reproduce the results of what they claim and as a result, shown in the figure below, SF ratio and price are in a linear relationship (not perfectly but in some sense) with significant statistics (**p-value under 0.01, R-square over 90%**).
+		- Following the above linear statistics (trend and intercept), we can plot how closely they are related in a time-series manner. With this graph, we can recognize that the **current price is in what regime recently**.
+
+
+7. Stock to Flow Reversion
+	- Definition:  ratio of the price of BTC divided by SF ratio.
+	- Formula: ![[Pasted image 20220722150521.png]]
+	- Interpretation: 
+		- measures the relative difference between the market price and SF ratio. SF ratio so far correctly estimates the **price trend**, which means the p**rice deviation from SF ratio can be an opportunity to bet**. 
+		- If SF reversion is too high compared to the price, the market price would be corrected soon, meaning a **bearish** moment.
+	- Use Case: Predicting market 
+		- 1st build a linear regression model of SF reversion to the price to align **two variables**. 
+		- After aligning both in a single graph shown below, we can clearly see the deviations of SF reversion to the price and those points clearly indicate bullish (green boxes) and bearish (red boxes) regimes respectively.
+		- ![[Pasted image 20220722151539.png|300]]
+
+8. MCA (Mean Coin Age)
+	- Definition: the mean value of products of coin unspent transaction output (UTxO) alive days and its value.
+	- ![[Pasted image 20220722151820.png]]
+	- Interpretation
+		- MCA is similar to **CDD** but focuses more on **unspent transaction output**. Mean Coin Dollar Age is the sum value of products of 
+			- coin unspent transaction output alive days, value, and the price at the created time. This indicator enables estimating the Long-Term Holders' portion.
+		- MCA is the average age of UTxO. MCA drop **implies** the massive move of Bitcoin UTxOs that **haven't moved** for a long time.
+		- MCDA is an indicator weighted by UTxO created price(USD) to the MCA.
+
+
+9. Mean Coin Dollar Age
+	- Definition: the mean value of products of coins unspent transaction output alive days, value, and price (Unit: USD) at the created time.  
+	- Description:
+		- '**Alive days**' means the days certain coins was kept **in a single wallet**.  
+		- Sudden **decrease** in values indicate coins that were dormant moved in mass.
