@@ -25,8 +25,8 @@
 - [6. On-chain Flow Indicators CryptoQuant](#6-on-chain-flow-indicators-cryptoquant)
 - [7. Miner Index](#7-miner-index)
 - [8. Spot Market Indicator](#8-spot-market-indicator)
-  - [SOPR](#sopr)
-  - [Order Books](#order-books)
+  - [8.1. SOPR](#81-sopr)
+  - [8.2. Order Books](#82-order-books)
 # 1. Demographic Profile of an Account (*resume-liked*)
 1. Background
 	- source (LT-BP)
@@ -537,7 +537,7 @@ Balances of addresses belonging to mining pools
 
 
 # 8. Spot Market Indicator
-## SOPR
+## 8.1. SOPR
 The SOPR (Spent Output Profit Ratio) indicator provides insight into macro market sentiment, profitability and losses taken over a particular time-frame. It reflects the degree of realised profit for all coins moved on-chain.
 
 SOPR is measured by considering only coins moved the timescale considered (daily, hourly etc), and taking the ratio between the fiat value at the time of UTXO creation, and the fiat value when the UTXO is spent.  
@@ -646,7 +646,7 @@ As time passes, the degree of values' meaning could differ on level.
 10. Realized Price - UTXO Age Bands
 	- Definition: a set of realized prices along with age bands. The metrics help us to overview **each cohort’s holding** behavior by overlaying a set of different realized prices. Realized price is calculated as Realized Cap divided by the total supply.
 
-## Order Books
+## 8.2. Order Books
 measure movements within exchanges to provide a near real-time view of trading activity. Each indicator refreshes every 1 minutes
 1. Bid-Ask Spread (refresh every 1min, display last 12 hours activity)
 	- Definition: a measure of liquidity calculating the difference between the ask **price and bid price in a limit order book.**
