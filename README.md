@@ -24,7 +24,9 @@
     - [5.2.4. In-House Flow (Total/Mean)](#524-in-house-flow-totalmean)
 - [6. On-chain Flow Indicators CryptoQuant](#6-on-chain-flow-indicators-cryptoquant)
 - [7. Miner Index](#7-miner-index)
-- [8. Market Indicator](#8-market-indicator)
+- [8. Spot Market Indicator](#8-spot-market-indicator)
+  - [SOPR](#sopr)
+  - [Order Books](#order-books)
 # 1. Demographic Profile of an Account (*resume-liked*)
 1. Background
 	- source (LT-BP)
@@ -534,7 +536,20 @@ Balances of addresses belonging to mining pools
   - https://resources.intotheblock.com/indicators/mining/miner-rewards-volume-share
 
 
-# 8. Market Indicator
+# 8. Spot Market Indicator
+## SOPR
+The SOPR (Spent Output Profit Ratio) indicator provides insight into macro market sentiment, profitability and losses taken over a particular time-frame. It reflects the degree of realised profit for all coins moved on-chain.
+
+SOPR is measured by considering only coins moved the timescale considered (daily, hourly etc), and taking the ratio between the fiat value at the time of UTXO creation, and the fiat value when the UTXO is spent.  
+The SOPR indicator can be considered within the following framework:  
+-   **SOPR values greater than 1** implies that the coins moved that day are, on average, selling at a profit (price sold is greater than the price paid).   
+-   **SOPR value less than 1** implies that the coins moved that day are, on average, selling at a loss (price sold is less than the price paid)  
+-   **SOPR value of exactly 1** implies that the coins moved that day are, on average, selling coins at break even.    
+-   **SOPR trending higher** implies profits are being realised with potential for previously illiquid supply being returned to liquid circulation
+-   **SOPR trending lower** implies losses are being realised and/or profitable coins are not being spent.  
+    
+
+![](https://3560207530-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LrnqJQEBJtavka04Vo6%2Fuploads%2Fgit-blob-2b7cb5a41532731aa5200eb1f77898d3b9a69186%2F00_sopr_default.png?alt=media)
 1. Estimated Levarage Ratio (ELR)
 	- Definition: The ratio of open interest divided by the reserve of an exchange.
 - Interpretation
@@ -630,4 +645,21 @@ As time passes, the degree of values' meaning could differ on level.
 
 10. Realized Price - UTXO Age Bands
 	- Definition: a set of realized prices along with age bands. The metrics help us to overview **each cohort’s holding** behavior by overlaying a set of different realized prices. Realized price is calculated as Realized Cap divided by the total supply.
+
+## Order Books
+measure movements within exchanges to provide a near real-time view of trading activity. Each indicator refreshes every 1 minutes
+1. Bid-Ask Spread (refresh every 1min, display last 12 hours activity)
+	- Definition: a measure of liquidity calculating the difference between the ask **price and bid price in a limit order book.**
+
+
+2. Exchange-Onchain Market Depth 
+	- Definition: numbers of open buy and sell orders at difference prices and on-chain positions at those price ranges (circles on top graph)
+
+
+
+3. Trades per Side 
+	- Definition:
+		- Measure the **number (or volume) of trades** where the buyers "crossed the spread" and bought at the Ask price vs the number (or volume) of trades where sellers "crossed the spread" and sold at **Bid price**, per minute.
+	- Types of **Buyer - Seller Trades Difference**
+		- 1 minute, 10 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours
 
