@@ -39,37 +39,37 @@
 1.3 Receiving Addresses
 
 ### 2. Address Balances (Native)
-2.1. With Non-zero Balance
-2.2. Balance ≥ 0.01
-2.3. Balance ≥ 0.1
-2.4. Balance ≥ 1
-2.5. Balance ≥10
-2.6. Balance≥100
-2.7. Balance≥1k
-2.8 Balance≥10k
+2.1. With Non-zero Balance  
+2.2. Balance ≥ 0.01  
+2.3. Balance ≥ 0.1  
+2.4. Balance ≥ 1  
+2.5. Balance ≥10     
+2.6. Balance≥100  
+2.7. Balance≥1k   
+2.8 Balance≥10k   
 
 ### 3. Address Balances (USD)
-3.1. Balance ≥ $1
-3.2. Balance ≥ $10
-3.3. Balance ≥ $100
-3.4. Balance ≥ $1k
-3.5. Balance ≥ $10k
-3.6. Balance ≥ $100k
-3.7. Balance ≥ $1M
+3.1. Balance ≥ $1    
+3.2. Balance ≥ $10   
+3.3. Balance ≥ $100  
+3.4. Balance ≥ $1k  
+3.5. Balance ≥ $10k   
+3.6. Balance ≥ $100k  
+3.7. Balance ≥ $1M  
 
 
 ### 4.  Address Growth
-4.1. Address Supply Distribution
-4.2. Supply Held by Addresses with Balance < 0.001
-4.3. Supply Held by Addresses with Balance 0.001 - 0.01
-4.4. Supply Held by Addresses with Balance 0.01-0.1
-4.5. Supply Held by Addresses with Balance 0.1-1
-4.6. Supply Held by Addresses with Balance 1-10
-4.7. Supply Held by Addresses with Balance 10-100
-4.8. Supply Held by Addresses with Balance 100-1k
-4.9. Supply Held by Addresses with Balance 1k-10k
-4.10. Supply Held by Addresses with Balance 10k-100k
-4.11. Supply Held by Addresses with Balance >100k
+4.1. Address Supply Distribution  
+4.2. Supply Held by Addresses with Balance < 0.001  
+4.3. Supply Held by Addresses with Balance 0.001 - 0.01  
+4.4. Supply Held by Addresses with Balance 0.01-0.1    
+4.5. Supply Held by Addresses with Balance 0.1-1  
+4.6. Supply Held by Addresses with Balance 1-10   
+4.7. Supply Held by Addresses with Balance 10-100  
+4.8. Supply Held by Addresses with Balance 100-1k  
+4.9. Supply Held by Addresses with Balance 1k-10k  
+4.10. Supply Held by Addresses with Balance 10k-100k  
+4.11. Supply Held by Addresses with Balance >100k  
 
 ### 5. Addresses in Profit/Loss
 5.1. Percent Addresses in Profit
