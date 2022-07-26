@@ -1,29 +1,28 @@
-# Structure of Profile of Account and Network
-- [Structure of Profile of Account and Network](#structure-of-profile-of-account-and-network)
-  - [1. Demographic Profile of an Account (*resume-liked*)](#1-demographic-profile-of-an-account-resume-liked)
-  - [2. Demographic of Transaction](#2-demographic-of-transaction)
-  - [3. Set of Address](#3-set-of-address)
-    - [1. Address Active Addresses](#1-address-active-addresses)
-    - [2. Address Balances (Native)](#2-address-balances-native)
-    - [3. Address Balances (USD)](#3-address-balances-usd)
-    - [4.  Address Growth](#4--address-growth)
-    - [5. Addresses in Profit/Loss](#5-addresses-in-profitloss)
-    - [6. Exchange Activity](#6-exchange-activity)
-    - [7. Hodlers](#7-hodlers)
+
+- [1. Demographic Profile of an Account (*resume-liked*)](#1-demographic-profile-of-an-account-resume-liked)
+- [2. Demographic of Transaction](#2-demographic-of-transaction)
+- [3. Set of Address](#3-set-of-address)
+    - [3.0.1. Address Active Addresses](#301-address-active-addresses)
+    - [3.0.2. Address Balances (Native)](#302-address-balances-native)
+    - [3.0.3. Address Balances (USD)](#303-address-balances-usd)
+    - [3.0.4.  Address Growth](#304--address-growth)
+    - [3.0.5. Addresses in Profit/Loss](#305-addresses-in-profitloss)
+    - [3.0.6. Exchange Activity](#306-exchange-activity)
+    - [3.0.7. Hodlers](#307-hodlers)
 - [4. Token Summary](#4-token-summary)
-    - [4.1 Overview:](#41-overview)
-    - [4.2 Four Main Onchain Signals](#42-four-main-onchain-signals)
-    - [4.3 Exchange Signals](#43-exchange-signals)
-    - [4.4 Derivatives](#44-derivatives)
-- [5. Exchange Flow Indicator](#5-exchange-flow-indicator)
-      - [5.1 IntoTheBlock](#51-intotheblock)
-      - [5.2 CrytoQuant](#52-crytoquant)
-        - [1. Reserve:](#1-reserve)
-        - [2. Exchange In/Outflow & Netflow](#2-exchange-inoutflow--netflow)
-        - [3. Withdrawing Transactions](#3-withdrawing-transactions)
-        - [4. In-House Flow (Total/Mean)](#4-in-house-flow-totalmean)
-- [6. On-chain Flow Indicators CryptoQuant](#6-on-chain-flow-indicators-cryptoquant)
-## 1. Demographic Profile of an Account (*resume-liked*)
+    - [4.0.1. 4.1 Overview:](#401-41-overview)
+    - [4.0.2. 4.2 Four Main Onchain Signals](#402-42-four-main-onchain-signals)
+    - [4.0.3. 4.3 Exchange Signals](#403-43-exchange-signals)
+    - [4.0.4. 4.4 Derivatives](#404-44-derivatives)
+  - [4.1. Exchange Flow Indicator](#41-exchange-flow-indicator)
+      - [4.1.0.1. 5.1 IntoTheBlock](#4101-51-intotheblock)
+      - [4.1.0.2. 5.2 CrytoQuant](#4102-52-crytoquant)
+        - [4.1.0.2.1. Reserve:](#41021-reserve)
+        - [4.1.0.2.2. Exchange In/Outflow & Netflow](#41022-exchange-inoutflow--netflow)
+        - [4.1.0.2.3. Withdrawing Transactions](#41023-withdrawing-transactions)
+        - [4.1.0.2.4. In-House Flow (Total/Mean)](#41024-in-house-flow-totalmean)
+- [5. On-chain Flow Indicators CryptoQuant](#5-on-chain-flow-indicators-cryptoquant)
+# 1. Demographic Profile of an Account (*resume-liked*)
 1. Background
 	- source (LT-BP)
 	- destination (LT-FP)
@@ -45,7 +44,7 @@
 	- Hash
 
 
-## 2. Demographic of Transaction
+# 2. Demographic of Transaction
 
 1. Block
 2. Time	2022-07-17 05:03:04
@@ -56,15 +55,15 @@
 
 
 
-## 3. Set of Address 
+# 3. Set of Address 
 https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
-### 1. Address Active Addresses 
+### 3.0.1. Address Active Addresses 
 1.1. Active Addresses  
 1.2. Sending Addresses 
 1.3. Receiving Addresses
 
-### 2. Address Balances (Native)
+### 3.0.2. Address Balances (Native)
 2.1. With Non-zero Balance
 2.2. Balance ≥ 0.01
 2.3. Balance ≥ 0.1
@@ -74,7 +73,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 2.7. Balance≥1k
 2.8 Balance≥10k
 
-### 3. Address Balances (USD)
+### 3.0.3. Address Balances (USD)
 3.1. Balance ≥ $1
 3.2. Balance ≥ $10
 3.3. Balance ≥ $100
@@ -84,7 +83,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 3.7. Balance ≥ $1M
 
 
-### 4.  Address Growth
+### 3.0.4.  Address Growth
 4.1. Address Supply Distribution
 4.2. Supply Held by Addresses with Balance < 0.001
 4.3. Supply Held by Addresses with Balance 0.001 - 0.01
@@ -97,7 +96,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 4.10. Supply Held by Addresses with Balance 10k-100k
 4.11. Supply Held by Addresses with Balance >100k
 
-### 5. Addresses in Profit/Loss
+### 3.0.5. Addresses in Profit/Loss
 5.1. Percent Addresses in Profit
 5.2. Addresses in Profit
 	- Definition: 
@@ -111,7 +110,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 
-### 6. Exchange Activity
+### 3.0.6. Exchange Activity
 6.1. Number of Addresses Depositing to Exchanges
 	- Definition:
 		- The number of unique addresses that appeared as a **sender** in a transaction sending funds to exchanges.
@@ -120,7 +119,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 		- The number of unique addresses that appeared as a **receiver** in a transaction receiving funds from an exchanges.
 
 
-### 7. Hodlers 
+### 3.0.7. Hodlers 
 7.1. Accumulation Addresses
 	-  have at least 2 incoming **non-dust** transfers and have **never spent funds.** Exchange addresses and addresses receiving from coinbase transactions (miner addresses) are discarded. To account for lost coins, addresses that were last active more than 7 years ago are omitted as well.
 	- *Bitcoin dust is a series of trace amounts of bitcoins that individually are less valuable than the computing power or fee that is required to process them; as a result, the transaction is impossible to process.*
@@ -138,7 +137,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 # 4. Token Summary
-### 4.1 Overview:
+### 4.0.1. 4.1 Overview:
 1. Holders Making Money at Current Price
 	 - Definition: 
 		- For any addresses with a balance of tokens, ITB identifies the average cost at which those tokens were purchased and compares it to current price.
@@ -194,7 +193,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 
-### 4.2 Four Main Onchain Signals
+### 4.0.2. 4.2 Four Main Onchain Signals
 1. Net Network Growth
 	- Definition: This signal measures the change in the **total number of addresses for a particular crypto-asset.** 
 		- Specifically, it tracks the **variation relative to the previous** week’s total addresses, **optimizing the thresholds** considered bullish or bearish to each asset’s nature. 
@@ -220,7 +219,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 
-### 4.3 Exchange Signals
+### 4.0.3. 4.3 Exchange Signals
 1. Smart Price
 	- Defintion: 
 		- A variation of the mid price where the average of the bid and ask prices is weighted according to their inverse volume (i.e., 
@@ -232,7 +231,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 		- Volume at the bid price - Volume at the ask price
 	- More: https://app.intotheblock.com/coin/BTC
 
-### 4.4 Derivatives 
+### 4.0.4. 4.4 Derivatives 
 - Futures Market Premium
 	- Definition:
 		- Signal combining futures price, volume and open interest assessing bullish or bearish momentum
@@ -243,8 +242,8 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 
-## 5. Exchange Flow Indicator 
-#### 5.1 IntoTheBlock
+## 4.1. Exchange Flow Indicator 
+#### 4.1.0.1. 5.1 IntoTheBlock
 On-chain flows display how crypto assets are moving **to and from exchanges**. Data could be subject to change as IntoTheBlock's models evolve over time.
 - View Group Chart: https://app.intotheblock.com/coin/BTC/deep-dive?group=exchanges&subgroup=on-chain-flows&chart=all
 1. On-chain Flows
@@ -278,11 +277,11 @@ On-chain flows display how crypto assets are moving **to and from exchanges**. D
 	- Changes: in Percentage %
 		- 24h Change, 7-Day Change, 30-Day Change
 
-#### 5.2 CrytoQuant
+#### 4.1.0.2. 5.2 CrytoQuant
 A money flow of Bitcoin transferred to and from exchange wallets to evaluate investors' behavior.
 Group Chart: https://cryptoquant.com/asset/btc/chart/exchange-flows
 
-##### 1. Reserve:
+##### 4.1.0.2.1. Reserve:
 - Definition: The total number of coins held in the exchange.
 - Input: (same as Definition)
 - Description: 
@@ -293,7 +292,7 @@ Group Chart: https://cryptoquant.com/asset/btc/chart/exchange-flows
 - User Guide: https://dataguide.cryptoquant.com/exchange-flows-indicators/exchange-reserve-1
 - API: https://cryptoquant.com/docs#operation/BTCgetReserve
 
-##### 2. Exchange In/Outflow & Netflow
+##### 4.1.0.2.2. Exchange In/Outflow & Netflow
 - Transactions Count:
 	- Definition: This endpoint returns the number of transactions flowing in/out of Bitcoin exchanges.
 	- API: https://cryptoquant.com/docs#operation/BTCgetTransactionsCountEF
@@ -332,7 +331,7 @@ Group Chart: https://cryptoquant.com/asset/btc/chart/exchange-flows
 			- High value indicates investors who **withdrew a lot** at once are increasing recently.  
 			- It could indicate **decreasing selling** pressure.
 
-##### 3. Withdrawing Transactions
+##### 4.1.0.2.3. Withdrawing Transactions
 - Definition: The total number of withdrawals count from the exchange.  
 - Description: 
 	- High value indicates more transactions were made for **long-term holding in high possibility**. 
@@ -342,7 +341,7 @@ Group Chart: https://cryptoquant.com/asset/btc/chart/exchange-flows
 
 
 
-##### 4. In-House Flow (Total/Mean)
+##### 4.1.0.2.4. In-House Flow (Total/Mean)
 - Definition: The total amount of coins circulated within the exchange's wallets.
 - View: https://cryptoquant.com/asset/btc/chart/exchange-flows/exchange-in-house-transactions?exchange=all_exchange&window=DAY&sma=0&ema=0&priceScale=log&metricScale=linear&chartStyle=line
 - API: https://cryptoquant.com/docs#operation/BTCgetInHouseFlow
@@ -350,7 +349,7 @@ Group Chart: https://cryptoquant.com/asset/btc/chart/exchange-flows
 
 
 
-## 6. On-chain Flow Indicators CryptoQuant
+# 5. On-chain Flow Indicators CryptoQuant
 *Flow Indicator: on on-chain models to signal possible price movements by assessing the value of Bitcoin and allow investors and traders to operate with confidence.*
 - On-chain models to signal possible price movements by assessing the value of Bitcoin and allow investors and traders to operate with confidence.
 
