@@ -1,5 +1,4 @@
 # Structure of Profile of Account and Network
-
 ## 1. Demographic Profile of an Account (*resume-liked*)
 1, Background
 	- source (LT-BP)
@@ -9,9 +8,160 @@
 3. Timestamp of Significant Change
 4. Annotated Features
 	- Retention Rate
+5. Num of Transactions
+6. Total Received
+7. Total Sent
+8. Final Balance
+9. Transactions
+
+- Fee 
+	- BTC
+	- (17.704 sat/B - 7.025 sat/WU - 223 bytes)
+	- (28.000 sat/vByte - 141 virtual bytes)
+	- Hash
+
+
+## 2. Demographic of Transaction
+
+1. Block
+2. Time	2022-07-17 05:03:04
+3. Size	113 (bytes)
+4. Total Input	0.00014639 BTC
+5. Total Output	0.00010691 BTC
+6. Fees	0.00003948 BTC
+
+
+
+## 3. Set of Address
+### 1. Address Active Addresses 
+1.1 Active Addresses
+1.2. Sending Addresses 
+1.3 Receiving Addresses
+
+### 2. Address Balances (Native)
+2.1. With Non-zero Balance
+2.2. Balance ≥ 0.01
+2.3. Balance ≥ 0.1
+2.4. Balance ≥ 1
+2.5. Balance ≥10
+2.6. Balance≥100
+2.7. Balance≥1k
+2.8 Balance≥10k
+
+### 3. Address Balances (USD)
+3.1. Balance ≥ $1
+3.2. Balance ≥ $10
+3.3. Balance ≥ $100
+3.4. Balance ≥ $1k
+3.5. Balance ≥ $10k
+3.6. Balance ≥ $100k
+3.7. Balance ≥ $1M
+
+
+### 4.  Address Growth
+4.1. Address Supply Distribution
+4.2. Supply Held by Addresses with Balance < 0.001
+4.3. Supply Held by Addresses with Balance 0.001 - 0.01
+4.4. Supply Held by Addresses with Balance 0.01-0.1
+4.5. Supply Held by Addresses with Balance 0.1-1
+4.6. Supply Held by Addresses with Balance 1-10
+4.7. Supply Held by Addresses with Balance 10-100
+4.8. Supply Held by Addresses with Balance 100-1k
+4.9. Supply Held by Addresses with Balance 1k-10k
+4.10. Supply Held by Addresses with Balance 10k-100k
+4.11. Supply Held by Addresses with Balance >100k
+
+### 5. Addresses in Profit/Loss
+5.1. Percent Addresses in Profit
+5.2. Addresses in Profit
+	- Definition: 
+	- The number of unique addresses whose funds have an average buy price that is lower than the current price. 
+	- "Buy price" is here defined as the price **at the time coins were transferred into an address**.
+5.3. Addresses in Loss
+	- Definition:
+		- The number of unique addresses whose funds have an average buy price that is higher than the current price. 
+		- "Buy price" is here defined as the price at the time coins were transferred into an address.
+
+
+
+
+### 6. Exchange Activity
+6.1. Number of Addresses Depositing to Exchanges
+	- Definition:
+		- The number of unique addresses that appeared as a **sender** in a transaction sending funds to exchanges.
+6.2. Number of Addresses Withdrawing from Exchanges
+	- Definition: 
+		- The number of unique addresses that appeared as a **receiver** in a transaction receiving funds from an exchanges.
+
+
+### 7. Hodlers 
+7.1. Accumulation Addresses
+	-  have at least 2 incoming **non-dust** transfers and have **never spent funds.** Exchange addresses and addresses receiving from coinbase transactions (miner addresses) are discarded. To account for lost coins, addresses that were last active more than 7 years ago are omitted as well.
+	- *Bitcoin dust is a series of trace amounts of bitcoins that individually are less valuable than the computing power or fee that is required to process them; as a result, the transaction is impossible to process.*
+	- *The cost of the fee to process a bitcoin transaction fluctuates based on the volume of transactions on the network.*
+	- *While Bitcoin dust can slow down network transactions, attempting to clean up Bitcoin dust can create a privacy problem, especially for small users.*
+
+7.2. Accumulation Addresses [BTC]
+	- The total amount of funds held in accumulation addresses. 
+	- Accumulation addresses are defined as addresses that have at least 2 incoming non-dust transfers and have never spent funds. 
+	- Exchange addresses and addresses receiving from coinbase transactions (miner addresses) are discarded. To account for lost coins, addresses that were last active more than 7 years ago are omitted as well.
+
+
+
+
+
+
+## 4. Token Summary
+1. Holders Making Money at Current Price
+
+
+2. Concentration by Large Holders
+	- Definition: This indicator aggregates the percentage of circulating supply held by whales (addresses holding over 1% of supply) and investors (addresses holding between 0.1%-1%). The sum of these two is the total concentration by large holders. 
+	- Input:  the percentage of circulating supply held by 
+		- whales (addresses holding over 1% of supply)  
+		- investors (addresses holding between 0.1%-1%)
+	- Calculation
+		- sum of these two is the total concentration by large holders. 
+
+
+
+3. Price Correlation with Bitcoin
+
+4. Holders' Composition by Time Held
+
+
+5. Transactions Greater than 100K
+
+6. Transactions Demographics
+	- Num of transactions that occur during Western trading times (10AM to 10PM UTC) vs those that occur during Eastern trading times (10PM to 10AM UTC) for the last 14 days
+
+
+7. Total Exchanges Inflows
+	- Total amount (in $ or tokens) entering exchange(s) deposit wallets
+
+
+8. Total Exchanges Outflows
+	- Total amount (in $ or tokens) entering exchange(s) withdrawal wallets
+
+
+
+
+
+
+### Signals
+![[Pasted image 20220726223440.png]]
+
 
 
 ## 2.  set of Address
+
+
+![[Pasted image 20220722165937.png]]
+![[Pasted image 20220722170128.png]]
+| ![[Pasted image 20220722165956.png]] |  ![[Pasted image 20220722170022.png]]   |
+| ------------------------------------ | --- |
+|                                      |     |
+![[Pasted image 20220722170051.png]]
 
 ### 2.1 Exchange *cryptoquant*
 - Reserve:
@@ -574,8 +724,6 @@ UTXO count
 		- 
 
 
-
-1
 
 
 
