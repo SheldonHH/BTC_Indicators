@@ -5,17 +5,18 @@
   - [3.1. Address Active Addresses](#31-address-active-addresses)
   - [3.2. Address Balances (Native)](#32-address-balances-native)
   - [3.3. Address Balances (USD)](#33-address-balances-usd)
-  - [3.4. Address Growth](#34-address-growth)
-  - [3.5. Addresses in Profit/Loss](#35-addresses-in-profitloss)
-  - [3.6. Exchange Activity](#36-exchange-activity)
-  - [3.7. Hodlers](#37-hodlers)
+  - [3.4. 3.4  Address Growth](#34-34--address-growth)
+  - [3.5. Address Supply](#35-address-supply)
+  - [3.6. Addresses in Profit/Loss](#36-addresses-in-profitloss)
+  - [3.7. Exchange Activity](#37-exchange-activity)
+  - [3.8. Hodlers](#38-hodlers)
 - [4. Token Summary](#4-token-summary)
   - [4.1. Overview:](#41-overview)
   - [4.2. Four Main Onchain Signals](#42-four-main-onchain-signals)
   - [4.3. Exchange Signals](#43-exchange-signals)
   - [4.4. Derivatives](#44-derivatives)
 - [5. Exchange Flow Indicator](#5-exchange-flow-indicator)
-  - [5.1.IntoTheBlock](#51intotheblock)
+  - [5.1. 5.1.IntoTheBlock](#51-51intotheblock)
   - [5.2. CrytoQuant](#52-crytoquant)
     - [5.2.1. Reserve:](#521-reserve)
     - [5.2.2. Exchange In/Outflow & Netflow](#522-exchange-inoutflow--netflow)
@@ -59,11 +60,18 @@
 https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 ## 3.1. Address Active Addresses 
-1.1. Active Addresses     
+1.1. Active Addresses
+  - Definition: The number of unique addresses that were active in the network either as a sender or receiver. Only addresses that were active in successful transactions are counted.     
+  - GlassNode: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.ActiveCount&s=1444561590&u=1445478418&zoom=
 1.2. Sending Addresses    
+   - Definition: The number of unique addresses that were active as a sender of funds. Only addresses that were active as a sender in successful non-zero transfers are counted.
+   - GlassNode: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.SendingCount&s=1444561590&u=1445478418&zoom=
 1.3. Receiving Addresses   
+   - Definition: The number of unique addresses that were active as a receiver of funds. Only addresses that were active as a receiver in successful non-zero transfers are counted.
+   - GlassNode: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.ReceivingCount&s=1444561590&u=1445478418&zoom=
 
 ## 3.2. Address Balances (Native)
+GlassNode: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.Min1UsdCount&s=1444561590&u=1445478418&zoom=
 2.1. With Non-zero Balance
 2.2. Balance ≥ 0.01   
 2.3. Balance ≥ 0.1   
@@ -74,6 +82,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 2.8 Balance≥10k   
 
 ## 3.3. Address Balances (USD)
+GlassNode: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.Min1UsdCount&s=1444561590&u=1445478418&zoom=
 3.1. Balance ≥ $1   
 3.2. Balance ≥ $10   
 3.3. Balance ≥ $100   
@@ -82,27 +91,38 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 3.6. Balance ≥ $100k   
 3.7. Balance ≥ $1M   
 
+## 3.4. Address Growth
+GlassNode: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.NewNonZeroCount&s=1444561590&u=1445478418&zoom=
+4.1. New Addresses:
+- Definition:
+  - The number of unique addresses that appeared for the first time in a transaction of the native coin in the network.
+- GlassNode: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.NewNonZeroCount&s=1444561590&u=1445478418&zoom=
 
-##  3.4. Address Growth
-4.1. Address Supply Distribution  
-4.2. Supply Held by Addresses with Balance < 0.001     
-4.3. Supply Held by Addresses with Balance 0.001 - 0.01   
-4.4. Supply Held by Addresses with Balance 0.01-0.1   
-4.5. Supply Held by Addresses with Balance 0.1-1   
-4.6. Supply Held by Addresses with Balance 1-10   
-4.7. Supply Held by Addresses with Balance 10-100   
-4.8. Supply Held by Addresses with Balance 100-1k   
-4.9. Supply Held by Addresses with Balance 1k-10k   
-4.10. Supply Held by Addresses with Balance 10k-100k   
-4.11. Supply Held by Addresses with Balance >100k   
+4.2. Total Addresses
+- Definition:
+  - The total number of unique addresses that ever appeared in a transaction of the native coin in the network.
+- GlassNode: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.Count&s=1444561590&u=1445478418&zoom=
 
-## 3.5. Addresses in Profit/Loss
-5.1. Percent Addresses in Profit
-5.2. Addresses in Profit
+
+##  3.5. Address Supply 
+5.1. Address Supply Distribution  
+5.2. Supply Held by Addresses with Balance < 0.001     
+5.3. Supply Held by Addresses with Balance 0.001 - 0.01   
+5.4. Supply Held by Addresses with Balance 0.01-0.1   5.5. Supply Held by Addresses with Balance 0.1-1   
+5.6. Supply Held by Addresses with Balance 1-10   
+5.7. Supply Held by Addresses with Balance 10-100   
+5.8. Supply Held by Addresses with Balance 100-1k   
+5.9. Supply Held by Addresses with Balance 1k-10k   
+5.10. Supply Held by Addresses with Balance 10k-100k   
+5.11. Supply Held by Addresses with Balance >100k   
+
+## 3.6. Addresses in Profit/Loss
+6.1. Percent Addresses in Profit
+6.2. Addresses in Profit
 	- Definition: 
 	- The number of unique addresses whose funds have an average buy price that is lower than the current price. 
 	- "Buy price" is here defined as the price **at the time coins were transferred into an address**.
-5.3. Addresses in Loss
+6.3. Addresses in Loss
 	- Definition:
 		- The number of unique addresses whose funds have an average buy price that is higher than the current price. 
 		- "Buy price" is here defined as the price at the time coins were transferred into an address.
@@ -110,23 +130,23 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 
-## 3.6. Exchange Activity
-6.1. Number of Addresses Depositing to Exchanges
+## 3.7. Exchange Activity
+7.1. Number of Addresses Depositing to Exchanges
 	- Definition:
 		- The number of unique addresses that appeared as a **sender** in a transaction sending funds to exchanges.
-6.2. Number of Addresses Withdrawing from Exchanges
+7.2. Number of Addresses Withdrawing from Exchanges
 	- Definition: 
 		- The number of unique addresses that appeared as a **receiver** in a transaction receiving funds from an exchanges.
 
 
-## 3.7. Hodlers 
-7.1. Accumulation Addresses
+## 3.8. Hodlers 
+8.1. Accumulation Addresses
 	-  have at least 2 incoming **non-dust** transfers and have **never spent funds.** Exchange addresses and addresses receiving from coinbase transactions (miner addresses) are discarded. To account for lost coins, addresses that were last active more than 7 years ago are omitted as well.
 	- *Bitcoin dust is a series of trace amounts of bitcoins that individually are less valuable than the computing power or fee that is required to process them; as a result, the transaction is impossible to process.*
 	- *The cost of the fee to process a bitcoin transaction fluctuates based on the volume of transactions on the network.*
 	- *While Bitcoin dust can slow down network transactions, attempting to clean up Bitcoin dust can create a privacy problem, especially for small users.*
 
-7.2. Accumulation Addresses [BTC]
+8.2. Accumulation Addresses [BTC]
 	- The total amount of funds held in accumulation addresses. 
 	- Accumulation addresses are defined as addresses that have at least 2 incoming non-dust transfers and have never spent funds. 
 	- Exchange addresses and addresses receiving from coinbase transactions (miner addresses) are discarded. To account for lost coins, addresses that were last active more than 7 years ago are omitted as well.
@@ -243,7 +263,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 # 5. Exchange Flow Indicator 
-## 5.1.IntoTheBlock
+## 5.1. 5.1.IntoTheBlock
 On-chain flows display how crypto assets are moving **to and from exchanges**. Data could be subject to change as IntoTheBlock's models evolve over time.
 - View Group Chart: https://app.intotheblock.com/coin/BTC/deep-dive?group=exchanges&subgroup=on-chain-flows&chart=all
 1. On-chain Flows
