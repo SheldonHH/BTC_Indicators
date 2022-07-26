@@ -15,7 +15,7 @@
   - [4.3. Exchange Signals](#43-exchange-signals)
   - [4.4. Derivatives](#44-derivatives)
 - [5. Exchange Flow Indicator](#5-exchange-flow-indicator)
-  - [5.1. 5.1 IntoTheBlock](#51-51-intotheblock)
+  - [5.1.IntoTheBlock](#51intotheblock)
   - [5.2. CrytoQuant](#52-crytoquant)
     - [5.2.1. Reserve:](#521-reserve)
     - [5.2.2. Exchange In/Outflow & Netflow](#522-exchange-inoutflow--netflow)
@@ -243,7 +243,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 # 5. Exchange Flow Indicator 
-## 5.1. 5.1 IntoTheBlock
+## 5.1.IntoTheBlock
 On-chain flows display how crypto assets are moving **to and from exchanges**. Data could be subject to change as IntoTheBlock's models evolve over time.
 - View Group Chart: https://app.intotheblock.com/coin/BTC/deep-dive?group=exchanges&subgroup=on-chain-flows&chart=all
 1. On-chain Flows
