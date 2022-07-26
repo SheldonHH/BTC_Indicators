@@ -58,45 +58,45 @@
 # 3. Set of Address 
 https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
-### 3.0.1. Address Active Addresses 
-1.1. Active Addresses  
-1.2. Sending Addresses 
-1.3. Receiving Addresses
+## 3.1. Address Active Addresses 
+1.1. Active Addresses     
+1.2. Sending Addresses    
+1.3. Receiving Addresses   
 
-### 3.0.2. Address Balances (Native)
+## 3.2. Address Balances (Native)
 2.1. With Non-zero Balance
-2.2. Balance ≥ 0.01
-2.3. Balance ≥ 0.1
-2.4. Balance ≥ 1
-2.5. Balance ≥10
-2.6. Balance≥100
-2.7. Balance≥1k
-2.8 Balance≥10k
+2.2. Balance ≥ 0.01   
+2.3. Balance ≥ 0.1   
+2.4. Balance ≥ 1   
+2.5. Balance ≥10   
+2.6. Balance≥100   
+2.7. Balance≥1k   
+2.8 Balance≥10k   
 
-### 3.0.3. Address Balances (USD)
-3.1. Balance ≥ $1
-3.2. Balance ≥ $10
-3.3. Balance ≥ $100
-3.4. Balance ≥ $1k
-3.5. Balance ≥ $10k
-3.6. Balance ≥ $100k
-3.7. Balance ≥ $1M
+## 3.3. Address Balances (USD)
+3.1. Balance ≥ $1   
+3.2. Balance ≥ $10   
+3.3. Balance ≥ $100   
+3.4. Balance ≥ $1k   
+3.5. Balance ≥ $10k   
+3.6. Balance ≥ $100k   
+3.7. Balance ≥ $1M   
 
 
-###  3.0.4. Address Growth
-4.1. Address Supply Distribution
-4.2. Supply Held by Addresses with Balance < 0.001
-4.3. Supply Held by Addresses with Balance 0.001 - 0.01
-4.4. Supply Held by Addresses with Balance 0.01-0.1
-4.5. Supply Held by Addresses with Balance 0.1-1
-4.6. Supply Held by Addresses with Balance 1-10
-4.7. Supply Held by Addresses with Balance 10-100
-4.8. Supply Held by Addresses with Balance 100-1k
-4.9. Supply Held by Addresses with Balance 1k-10k
-4.10. Supply Held by Addresses with Balance 10k-100k
-4.11. Supply Held by Addresses with Balance >100k
+##  3.4. Address Growth
+4.1. Address Supply Distribution  
+4.2. Supply Held by Addresses with Balance < 0.001     
+4.3. Supply Held by Addresses with Balance 0.001 - 0.01   
+4.4. Supply Held by Addresses with Balance 0.01-0.1   
+4.5. Supply Held by Addresses with Balance 0.1-1   
+4.6. Supply Held by Addresses with Balance 1-10   
+4.7. Supply Held by Addresses with Balance 10-100   
+4.8. Supply Held by Addresses with Balance 100-1k   
+4.9. Supply Held by Addresses with Balance 1k-10k   
+4.10. Supply Held by Addresses with Balance 10k-100k   
+4.11. Supply Held by Addresses with Balance >100k   
 
-### 3.0.5. Addresses in Profit/Loss
+## 3.5. Addresses in Profit/Loss
 5.1. Percent Addresses in Profit
 5.2. Addresses in Profit
 	- Definition: 
@@ -110,7 +110,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 
 
 
-### 3.0.6. Exchange Activity
+## 3.6. Exchange Activity
 6.1. Number of Addresses Depositing to Exchanges
 	- Definition:
 		- The number of unique addresses that appeared as a **sender** in a transaction sending funds to exchanges.
@@ -119,7 +119,7 @@ https://studio.glassnode.com/metrics?a=BTC&m=addresses.ActiveCount
 		- The number of unique addresses that appeared as a **receiver** in a transaction receiving funds from an exchanges.
 
 
-### 3.0.7. Hodlers 
+## 3.7. Hodlers 
 7.1. Accumulation Addresses
 	-  have at least 2 incoming **non-dust** transfers and have **never spent funds.** Exchange addresses and addresses receiving from coinbase transactions (miner addresses) are discarded. To account for lost coins, addresses that were last active more than 7 years ago are omitted as well.
 	- *Bitcoin dust is a series of trace amounts of bitcoins that individually are less valuable than the computing power or fee that is required to process them; as a result, the transaction is impossible to process.*
